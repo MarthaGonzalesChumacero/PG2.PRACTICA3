@@ -4,7 +4,7 @@
 
 **Descripción**
 
-Esta API proporcionará información clave sobre el sistema tributario, diseñada para promover la cultura tributaria, ya que existe mucha desinformacion respecto al tema. Esto permitirá acceder a información sobre impuestos, obligaciones, conceptos clave (como NIT, RC-IVA, IUE, IVA, IT, etc.), beneficios de cumplir con los tributos y responder preguntas frecuentes.
+Esta API proporcionará información clave sobre el sistema tributario, diseñada para promover la cultura tributaria, ya que existe mucha desinformacion respecto al tema. Esto permitirá acceder a información sobre impuestos, obligaciones, conceptos clave (como NIT, RC-IVA, IUE, IVA, IT, etc.), beneficios de cumplir con los tributos y responder preguntas frecuentes......
 
 1.  **Impuestos**
   - `Nombre`
