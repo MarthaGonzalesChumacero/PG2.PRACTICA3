@@ -195,6 +195,7 @@ class PreguntaFrecuente(models.Model):
 
     def __str__(self):
         return self.pregunta
+```
 
 ## Aplicar migraciones
 
@@ -426,7 +427,7 @@ La API expone los siguientes endpoints públicos (no requieren autenticación):
                 "descripcion": "Exención de Multas e Intereses",
                 "detalle": "Al cumplir con los plazos, se evitan recargos y sanciones."
             }
-            // ... más beneficios
+            
         ]
         ```
 * **Obtener detalles de un beneficio por ID:**
@@ -460,7 +461,7 @@ La API expone los siguientes endpoints públicos (no requieren autenticación):
                 "pregunta": "¿Qué es el NIT?",
                 "respuesta": "El NIT (Número de Identificación Tributaria) es un código único asignado a contribuyentes."
             }
-            // ... más preguntas
+            
         ]
         ```
 * **Obtener detalles de una pregunta frecuente por ID:**
