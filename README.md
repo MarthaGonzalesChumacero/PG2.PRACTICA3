@@ -226,6 +226,10 @@ python manage.py runserver
 ```
 La API estará accesible en http://127.0.0.1:8000/api/ y el panel de administración en http://127.0.0.1:8000/admin/.
 
+![Captura de pantalla](Captura.png)
+
+---
+
 
 ## DIAGRAMA DE MODELOS
 ## Diagramar el MER de `models.py` usando Graphviz
