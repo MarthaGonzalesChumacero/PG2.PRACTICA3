@@ -146,6 +146,7 @@ INSTALLED_APPS = [
 
 Escribe el modelo en `servicios/models.py`:
 
+```python
 # servicios/models.py
 from django.db import models
 
@@ -194,7 +195,6 @@ class PreguntaFrecuente(models.Model):
 
     def __str__(self):
         return self.pregunta
-
 
 ## Aplicar migraciones
 
