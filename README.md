@@ -242,6 +242,9 @@ Este comando generara una imagen con nombre de `modelo.py` directamnente en la c
 ## Visualizacion del diagrama
 
 Abre el archivo `modelo.png` y veras el diagrama MER.
+![Diagrama de modelos](modelo.png)
+
+--- 
 
 ## Endpoints de la API
 
@@ -350,7 +353,7 @@ La API expone los siguientes endpoints públicos (no requieren autenticación):
                     "Impuesto al Valor Agregado"
                 ]
             }
-            // ... más obligaciones
+            
         ]
         ```
 * **Obtener detalles de una obligación por ID:**
@@ -391,7 +394,7 @@ La API expone los siguientes endpoints públicos (no requieren autenticación):
                 "importancia": "Reduce la carga tributaria en ventas.",
                 "como_obtenerlo": "Mediante facturas de compra."
             }
-            // ... más conceptos
+            
         ]
         ```
 * **Obtener detalles de un concepto clave por término:**
