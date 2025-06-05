@@ -11,21 +11,23 @@ El objetivo de esta API es facilitar el desarrollo de aplicaciones educativas e 
 La API ha sido implementada utilizando Django y Django REST Framework, enfocándose en la exposición de datos de solo lectura para garantizar la seguridad, por lo que no requiere autenticación para su consumo.
 
 ## DIAGRAMA DE MODELOS
-## Diagramar el MER de `models.py` usando Graphviz
+## Diagramar el MER de models.py usando Graphviz
 
 Instalalo en tu sistema, puedes descargarlo desde: https://graphviz.gitlab.io/download/
 
+luego ejecuta:
+
+bash
+python manage.py graph_models servicios -o modelo.png
+
+Este comando generara una imagen con nombre de modelo.py directamnente en la carpeta de `servicios`con el diagrama entidad y relacion
+
+## Visualizacion del diagrama
+
+Abre el archivo modelo.png y veras el diagrama MER.
+![Diagrama de modelos](modelo.png)
+
 --- 
-
-## Endpoints de la API
-
-La API expone los siguientes endpoints públicos (no requieren autenticación):
-
-### 1. Impuestos
-
-**Descripción:** Permite consultar información detallada sobre los diferentes impuestos.
-
-
 -----------------------------------------------------------------
 # API de Cultura Tributaria
 
