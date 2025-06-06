@@ -40,13 +40,13 @@ Estos endpoints se encuentran bajo el prefijo `/api/` y no requieren autenticaci
 **Método:** `GET/API/IMPUESTOS/IVA`  
 **Descripción:** Lista todos los impuestos registrados.
 
-  id: 1,
-  nombre: "Impuesto al Valor Agregado",
-  sigla: "IVA",
-  descripcion_general: "Impuesto indirecto sobre el consumo de compra de bienes o servicios profesionales.",
-  sujeto_activo: "Estado",
-  sujeto_pasivo: "Consumidor final o Contribuyente",
-  alicuota: "13.00"
+id: 1,
+nombre: "Impuesto al valor agregado",
+descripcion: "IVA",
+plazo_general: "Impuesto indirecto sobre el consumo de compra de bienes o servicios profesionales",
+Sujeto_activo: "Estado",
+Sujeto_pasivo: "Contribuyente",
+alicuota: ["13"]
 
 ---
 
