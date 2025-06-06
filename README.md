@@ -40,7 +40,6 @@ Estos endpoints se encuentran bajo el prefijo `/api/` y no requieren autenticaci
 **Método:** `GET/API/IMPUESTOS/IVA`  
 **Descripción:** Lista todos los impuestos registrados.
 
-**Respuesta de ejemplo:**
   id: 1,
   nombre: "Impuesto al Valor Agregado",
   sigla: "IVA",
