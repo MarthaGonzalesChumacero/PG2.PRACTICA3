@@ -36,12 +36,6 @@ Abre el archivo modelo.png y veras el diagrama MER.
 Estos endpoints se encuentran bajo el prefijo `/api/` y no requieren autenticación porque es publica y obtendrán una respuesta por cada endpoint proporcionada.
 
 ---
-
-### `/api/impuestos/`  
-**Método:** `GET`  
-**Descripción:** Lista todos los impuestos registrados.
-**RespuestaS con ejemplos:**
-
 ### `/api/impuestos/`  
 **Método:** `GET/API/IMPUESTOS/IVA`  
 **Descripción:** Lista todos los impuestos registrados.
