@@ -91,17 +91,17 @@ env.bak/
 venv.bak/
 .env.remote
 
-
+# Spyder project settings
 .spyderproject
 .spyproject
 
-
+# Rope project settings
 .ropeproject
 
-
+# mkdocs documentation
 /site
 
-
+# mypy
 .mypy_cache/
 
 *.db
