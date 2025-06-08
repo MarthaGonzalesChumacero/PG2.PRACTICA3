@@ -33,7 +33,7 @@ Abre el archivo modelo.png y veras el diagrama MER.
 
 1.Una plataforma web o app móvil educativa puede usar esta API para mostrar a estudiantes información clara sobre los tipos de impuestos por ejemplo (IVA, IT, RC-IVA,IUE, etc), conceptos clave como NIT, credito fiscval, debito fiscal,etc
 
-Con el objetivo de enseñar desde edades tempranas el rol y funcionamiento de los tributos.
+Con el OBJETIVO de enseñar desde edades tempranas el rol y funcionamiento de los tributos.
 
 Usando el endpoint GET/api/impuestos/
 Usando el endpoint GET/api/conceptos_clave/
@@ -45,7 +45,7 @@ Con el OBJETIVO de ofrecer asistencia basica 24/7 sobre temas tributarios.
 
 Usando el endpoint GET/api/preguntas_frecuentes/
 
----
+
 ### **`/api/impuestos/`** 
 **Método:** `GET`
 **Descripción:** Lista todos los impuestos registrados.
@@ -60,7 +60,7 @@ Usando el endpoint GET/api/preguntas_frecuentes/
     "sujeto_pasivo": "Contribuyente",
     "alicuota": 13
 }
----
+
 
 ### `/api/obligaciones/`  
 **Método:** `GET`
@@ -88,7 +88,7 @@ Usando el endpoint GET/api/preguntas_frecuentes/
     "como_obtenerlo": "Presentando comprobantes válidos de compras."
 }
 
----
+
 ### `/api/beneficios/`
 **Método:** `GET`
 **Descripción:** Lista los beneficios tributarios por cumplimiento.
@@ -106,7 +106,7 @@ Usando el endpoint GET/api/preguntas_frecuentes/
     }
 ]
 
----
+
 ### `/api/preguntas_frecuentes/`
 **Método:** `GET`
 **Descripción:** Lista las preguntas frecuentes sobre cultura tributaria.
@@ -124,7 +124,6 @@ Usando el endpoint GET/api/preguntas_frecuentes/
     }
 ]
 
-----------------
 
 
 
