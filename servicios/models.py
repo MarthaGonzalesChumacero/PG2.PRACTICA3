@@ -1,53 +1,51 @@
 from django.db import models
 
-class ConceptoClave(models.Model):
-    termino = models.CharField(max_length=200, unique=True)
-    definicion = models.TextField(blank=True, null=True)
-    importancia = models.TextField(blank=True, null=True)
-    como_obtenerlo = models.TextField(blank=True, null=True)
+class Impuesto(models.Model):
+    nombre = models.CharField(max_length=100, verbose_name="Nombre del impuesto", db_index=True)
+    descripcion = models.TextField(blank=True, null=True, verbose_name="Descripción")
 
     def __str__(self):
-        return self.termino
+        return self.nombre
 
+class ConceptoClave(models.Model):
+    termino = models.CharField(max_length=100, verbose_name="Término clave", db_index=True)
+    definicion = models.TextField(verbose_name="Definición", default="Definición no disponible")  # Se agregó default
+    importancia = models.TextField(blank=True, null=True, verbose_name="Importancia")
+    como_obtenerlo = models.TextField(blank=True, null=True, verbose_name="Cómo obtenerlo")
+    url_fuente = models.URLField(blank=True, null=True, verbose_name="Fuente externa")
+    impuesto = models.ForeignKey(Impuesto, on_delete=models.PROTECT, related_name='conceptos_clave', default=1)  # Se agregó default=1
+
+    def __str__(self):
+        return f"{self.termino[:50]}..." if len(self.termino) > 50 else self.termino
 
 class Obligacion(models.Model):
-    nombre = models.CharField(max_length=200)
-    descripcion = models.TextField(blank=True, null=True)
-    plazo_general = models.CharField(max_length=100, blank=True, null=True)
-    requisitos_principales = models.TextField(blank=True, null=True)
+    nombre = models.CharField(max_length=100, verbose_name="Nombre de la obligación", db_index=True)
+    descripcion = models.TextField(verbose_name="Descripción", default="Sin descripción disponible")  # Se agregó default
+    plazo_general = models.TextField(blank=True, null=True, verbose_name="Plazo general")
+    requisitos_principales = models.TextField(blank=True, null=True, verbose_name="Requisitos principales")
+    url_info = models.URLField(blank=True, null=True, verbose_name="Información oficial")
+    impuesto = models.ForeignKey(Impuesto, on_delete=models.PROTECT, related_name='obligaciones', default=1)  # Se mantiene el default
 
     def __str__(self):
         return self.nombre
 
 
 class BeneficioCumplimiento(models.Model):
-    descripcion = models.CharField(max_length=200)
-    detalle = models.TextField(blank=True, null=True)
+    nombre = models.CharField(max_length=100, verbose_name="Nombre del beneficio", db_index=True, default="Beneficio desconocido")  # Se agregó default
+    descripcion = models.TextField(verbose_name="Descripción")
+    detalle = models.TextField(blank=True, null=True, verbose_name="Detalle adicional")
+    url_detalle = models.URLField(blank=True, null=True, verbose_name="Más información")
+    impuesto = models.ForeignKey(Impuesto, on_delete=models.PROTECT, related_name='beneficios', default=1)  # Se mantiene el default
 
     def __str__(self):
-        return self.descripcion
-
-
-class Impuesto(models.Model):
-    nombre = models.CharField(max_length=200)
-    sigla = models.CharField(max_length=50, blank=True, null=True)
-    descripcion_general = models.TextField(blank=True, null=True)
-    sujeto_activo = models.CharField(max_length=200, blank=True, null=True)
-    sujeto_pasivo = models.CharField(max_length=200, blank=True, null=True)
-    alicuota = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
-
-    conceptos_clave = models.ManyToManyField(ConceptoClave, blank=True, related_name='impuestos')
-    obligaciones = models.ManyToManyField(Obligacion, blank=True, related_name='impuestos')
-    beneficios = models.ManyToManyField(BeneficioCumplimiento, blank=True, related_name='impuestos')
-    preguntas_frecuentes = models.ManyToManyField('PreguntaFrecuente', blank=True, related_name='impuestos')
-
-    def __str__(self):
-        return self.nombrse
-
+        return self.nombre
 
 class PreguntaFrecuente(models.Model):
-    pregunta = models.TextField()
-    respuesta = models.TextField()
+    pregunta = models.TextField(verbose_name="Pregunta frecuente", db_index=True)
+    respuesta = models.TextField(verbose_name="Respuesta")
+    url_referencia = models.URLField(blank=True, null=True, verbose_name="Referencia externa")
+    impuesto = models.ForeignKey(Impuesto, on_delete=models.PROTECT, related_name='preguntas_frecuentes', default=1)  # Se agregó default=1
 
     def __str__(self):
-        return self.pregunta
+        return f"{self.pregunta[:50]}..." if len(self.pregunta) > 50 else self.pregunta
+
